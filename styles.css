@@ -191,8 +191,8 @@ h1 {
   width: min(100%, 720px);
   margin: 22px auto 24px;
   color: #8d96a2;
-  font-size: clamp(14px, 1.25vw, 17px);
-  font-weight: 420;
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 430;
   line-height: 1.45;
   text-align: center;
 }
@@ -979,7 +979,7 @@ h2 {
   .peace-verse {
     margin: 16px auto 18px;
     max-width: 310px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .video-shell {
