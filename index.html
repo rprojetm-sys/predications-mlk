@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prédications MLK</title>
+    <link rel="stylesheet" href="styles.css?v=mlk-ref-17" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="top-bar" aria-label="Navigation principale">
+        <a class="brand" href="#" aria-label="Accueil des prédications">
+          <img src="https://eglisemlk-statics.s3.amazonaws.com/uploads/2021/01/logo-mlk.png" alt="Église MLK Martin Luther King" />
+        </a>
+        <nav class="nav-pills" aria-label="Sections">
+          <button class="nav-pill active" type="button" data-view="home">Dernière vidéo</button>
+          <button class="nav-pill" type="button" data-view="celebration">Célébration</button>
+          <button class="nav-pill" type="button" data-view="prayer">Prière</button>
+          <button class="nav-pill" type="button" data-view="worship">Louange</button>
+        </nav>
+        <a class="header-prayer" href="mailto:priere@eglisemlk.fr">Demander une prière</a>
+      </header>
+
+      <section class="tv-experience" aria-label="Prédications MLK">
+        <div class="ambient-panel">
+          <div class="tv-main">
+            <p class="sync-note" id="syncStatus">Synchronisation du Sheet</p>
+
+            <section class="sermon-stage" aria-label="Dernière prédication">
+              <div class="sermon-heading">
+                <p class="content-label" id="contentLabel">Dernière prédication</p>
+                <h1 id="featureTitle">Chargement de la prédication</h1>
+              </div>
+
+              <div class="video-shell">
+                <iframe
+                  id="mainVideo"
+                  title="Dernière prédication"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="sermon-info">
+                <div class="sermon-title-block">
+                  <p class="sermon-subtitle" id="sermonSubject">La vidéo se prépare.</p>
+                  <div class="meta-row" id="featureMeta">
+                    <span>Sheet connecté</span>
+                  </div>
+                </div>
+                <div class="sermon-actions" aria-label="Actions d'accompagnement">
+                  <a class="play-button" href="mailto:priere@eglisemlk.fr">Demander une prière</a>
+                  <button class="quiet-button" id="callPrayerButton" type="button">Appeler pour prier</button>
+                </div>
+              </div>
+
+              <p class="sermon-description" id="featureDescription">
+                Les prédications se chargent automatiquement depuis le fichier Google Sheet.
+              </p>
+            </section>
+
+            <div class="call-popover" id="callPopover" hidden>
+              <div class="call-card" role="dialog" aria-labelledby="callTitle">
+                <button class="call-close" id="callClose" type="button" aria-label="Fermer">×</button>
+                <p id="callTitle">Appeler pour prier</p>
+                <a href="tel:+33980808888">09 80 80 88 88</a>
+              </div>
+            </div>
+
+            <section class="choice-panel" id="choicePanel" aria-label="Continuer">
+              <p class="choice-kicker">Que voulez-vous faire maintenant ?</p>
+              <div class="choice-grid">
+                <button class="choice-button" type="button" data-view="celebration">
+                  <span class="choice-icon" aria-hidden="true">📖</span>
+                  <span class="choice-action">Regarder</span>
+                  <span class="choice-title">Une autre célébration</span>
+                  <span class="choice-help">Des messages simples à écouter.</span>
+                </button>
+                <button class="choice-button" type="button" data-view="prayer">
+                  <span class="choice-icon" aria-hidden="true">🙏</span>
+                  <span class="choice-action">Prier</span>
+                  <span class="choice-title">Avec Ivan Carluer</span>
+                  <span class="choice-help">Des émissions pour prier calmement.</span>
+                </button>
+                <button class="choice-button" type="button" data-view="worship">
+                  <span class="choice-icon" aria-hidden="true">🎵</span>
+                  <span class="choice-action">Écouter</span>
+                  <span class="choice-title">Louange et adoration</span>
+                  <span class="choice-help">Des chants pour se poser.</span>
+                </button>
+              </div>
+            </section>
+
+            <section class="browse-panel" id="celebrationPanel" aria-label="Célébrations" hidden>
+              <div class="browse-header">
+                <div>
+                  <p class="content-label">Choisir simplement</p>
+                  <h2>Célébrations</h2>
+                </div>
+                <label class="search-box">
+                  <span>Rechercher</span>
+                  <input id="celebrationSearch" type="search" placeholder="Écrire un mot, un titre..." autocomplete="off" />
+                </label>
+              </div>
+              <div class="content-grid browse-grid" id="celebrationBrowseGrid"></div>
+              <button class="show-all-button" type="button" data-list="celebration">Voir tout</button>
+            </section>
+
+            <section class="browse-panel" id="allPanel" aria-label="Toutes les vidéos" hidden>
+              <div class="browse-header">
+                <div>
+                  <p class="content-label">Choisir simplement</p>
+                  <h2>Toutes les vidéos</h2>
+                </div>
+                <label class="search-box">
+                  <span>Rechercher</span>
+                  <input id="allSearch" type="search" placeholder="Écrire un mot, un titre..." autocomplete="off" />
+                </label>
+              </div>
+              <div class="content-grid browse-grid" id="allVideosGrid"></div>
+            </section>
+
+            <section class="browse-panel" id="prayerPanel" aria-label="Prière" hidden>
+              <div class="browse-header">
+                <div>
+                  <p class="content-label">Choisir simplement</p>
+                  <h2>Émissions de prière</h2>
+                </div>
+                <label class="search-box">
+                  <span>Rechercher</span>
+                  <input id="prayerSearch" type="search" placeholder="Écrire un mot, un titre..." autocomplete="off" />
+                </label>
+              </div>
+              <div class="content-grid browse-grid" id="prayerBrowseGrid"></div>
+              <button class="show-all-button" type="button" data-list="prayer">Voir tout</button>
+            </section>
+
+            <section class="browse-panel" id="worshipPanel" aria-label="Louange et Adoration" hidden>
+              <div class="browse-header">
+                <div>
+                  <p class="content-label">Choisir simplement</p>
+                  <h2>Louange et Adoration</h2>
+                </div>
+                <label class="search-box">
+                  <span>Rechercher</span>
+                  <input id="worshipSearch" type="search" placeholder="Écrire un chant, un moment..." autocomplete="off" />
+                </label>
+              </div>
+              <div class="content-grid browse-grid" id="worshipBrowseGrid"></div>
+              <button class="show-all-button" type="button" data-list="worship">Voir tout</button>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js?v=mlk-ref-23"></script>
+  </body>
+</html>
