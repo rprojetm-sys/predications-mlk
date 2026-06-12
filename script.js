@@ -171,7 +171,7 @@ function byNewestDate(first, second) {
   return dateTime(second) - dateTime(first);
 }
 
-function selectVideo(video, index, videos) {
+function selectVideo(video, index, videos, shouldScroll = true) {
   const embedUrl = videoEmbedUrl(video.watch || video.url) || video.embed;
   const description = cleanDescription(video.description);
   const speaker = speakerFromTitle(video.titre);
@@ -206,7 +206,9 @@ function selectVideo(video, index, videos) {
   });
 
   syncStatus.textContent = index === 0 ? "Dernière vidéo synchronisée" : "Vidéo sélectionnée";
-  document.querySelector(".sermon-stage").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (shouldScroll) {
+    document.querySelector(".sermon-stage").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 function createVideoCard(video, index, videos) {
@@ -363,7 +365,7 @@ function renderMainVideos(videos) {
     return normalizeKey(video.tag) === "priere";
   }).sort(byNewestDate);
 
-  selectVideo(orderedVideos[0], 0, orderedVideos);
+  selectVideo(orderedVideos[0], 0, orderedVideos, false);
   renderSearchableViews();
 }
 

@@ -127,7 +127,7 @@ h1 {
 }
 
 .tv-experience {
-  padding-top: 18px;
+  padding-top: 22px;
 }
 
 .ambient-panel {
@@ -185,6 +185,20 @@ h1 {
   font-size: clamp(24px, 2.2vw, 30px);
   font-weight: 400;
   line-height: 1.2;
+}
+
+.peace-verse {
+  width: min(100%, 930px);
+  margin: 0 0 10px;
+  color: #6f7681;
+  font-size: clamp(17px, 1.7vw, 21px);
+  font-weight: 420;
+  line-height: 1.35;
+}
+
+.peace-verse span {
+  color: #9aa2ad;
+  white-space: nowrap;
 }
 
 .sermon-subtitle {
@@ -898,17 +912,19 @@ h2 {
   .nav-pills {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 7px;
     width: 100%;
     padding: 8px;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: visible;
   }
 
   .nav-pill {
     min-height: 46px;
-    font-size: 17px;
+    padding: 0 14px;
+    font-size: 16px;
     text-align: center;
+    white-space: normal;
   }
 
   .header-prayer {
@@ -922,7 +938,7 @@ h2 {
 
   .ambient-panel {
     grid-template-columns: 1fr;
-    padding: 22px 14px 30px;
+    padding: 20px 14px 30px;
   }
 
   .feature-art {
@@ -957,6 +973,11 @@ h2 {
 
   .sermon-title {
     font-size: 24px;
+  }
+
+  .peace-verse {
+    margin-bottom: 10px;
+    font-size: 17px;
   }
 
   .video-shell {
