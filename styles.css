@@ -188,12 +188,13 @@ h1 {
 }
 
 .peace-verse {
-  width: min(100%, 930px);
-  margin: 0 0 10px;
-  color: #6f7681;
-  font-size: clamp(17px, 1.7vw, 21px);
+  width: min(100%, 720px);
+  margin: 22px auto 24px;
+  color: #8d96a2;
+  font-size: clamp(14px, 1.25vw, 17px);
   font-weight: 420;
-  line-height: 1.35;
+  line-height: 1.45;
+  text-align: center;
 }
 
 .peace-verse span {
@@ -976,8 +977,9 @@ h2 {
   }
 
   .peace-verse {
-    margin-bottom: 10px;
-    font-size: 17px;
+    margin: 16px auto 18px;
+    max-width: 310px;
+    font-size: 14px;
   }
 
   .video-shell {
